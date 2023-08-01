@@ -1,3 +1,7 @@
+import { getArchetypes } from "./database.js"
+
+const archetypes = getArchetypes();
+
 document.addEventListener("click", (clickEvent) => {
   const typeClicked = clickEvent.target;
 
@@ -14,6 +18,9 @@ document.addEventListener("click", (clickEvent) => {
 export const TypeList = () => {
   let headerHtml = `<div id="archetypes_container" class="content_block">`;
   headerHtml += `<h3>Magician Types:</h3>`;
+  for (const archetype of archetypes){
+    
+  }
 
   headerHtml += `</div>`;
   return headerHtml;
