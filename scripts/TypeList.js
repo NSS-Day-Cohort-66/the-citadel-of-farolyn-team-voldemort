@@ -1,4 +1,4 @@
-import { getArchetypes } from "./database.js"
+import { getArchetypes } from "./database.js";
 
 const archetypes = getArchetypes();
 
@@ -18,12 +18,16 @@ document.addEventListener("click", (clickEvent) => {
 export const TypeList = () => {
   let headerHtml = `<div id="archetypes_container" class="content_block">`;
   headerHtml += `<h3>Magician Types:</h3><ul>`;
-  for (const archetype of archetypes){
-    headerHtml += `
-    
-    `
+  for (const archetype of archetypes) {
+    headerHtml += `<li data-bookid="${archetype.bookId}
+                       data-id="${archetype.id}"
+                       data-name="${archetype.name}"
+                       data-schoolid="${archetype.schoolId}"
+                       data-type="archetype">
+                       ${archetype.name}
+                   </li>
+    `;
   }
-
   headerHtml += `</div>`;
   return headerHtml;
 };
