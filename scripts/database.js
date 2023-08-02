@@ -251,13 +251,13 @@ const database = {
 };
 
 export const getSchools = () => {
-  return database.schools.map(schools => ({ ...schools }))
+  return database.schools.map(school => ({ ...school}))
 }
 
 export const getArchetypes = () => {
-  return database.archetypes.map(archetypes => ({ ...archetypes}))
+  return database.archetypes.map(archetype => ({ ...archetype}))
 }
 
 export const getBooks = () => {
-  return database.books.map(books => ({ ...books }))
+  return database.books.map(book => ({ ...book}))
 }
