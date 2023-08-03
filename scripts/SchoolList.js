@@ -1,3 +1,6 @@
+import { getSchools } from "./database.js"
+
+
 document.addEventListener("click", (clickEvent) => {
   const schoolClicked = clickEvent.target;
 
@@ -11,11 +14,18 @@ document.addEventListener("click", (clickEvent) => {
     `;
   }
 });
-
+// added school id/name :D
 export const SchoolList = () => {
   let headerHtml = `<div id="schools_container" class="content_block">`;
-  headerHtml += `<h3>Magic Schools:</h3>`;
+  const list = getSchools()
+  for (const school of list) {
+  headerHtml += `<h3>Magic Schools:</h3>
+  <ul>
+  <li data-id="${school.id}">${school.name}</li>
+  </ul>
+  `;
 
   headerHtml += `</div>`;
   return headerHtml;
+  }
 };
