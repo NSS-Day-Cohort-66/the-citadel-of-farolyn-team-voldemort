@@ -3,13 +3,15 @@ import { getArchetypes } from "./database.js";
 document.addEventListener("click", (clickEvent) => {
   const typeClicked = clickEvent.target;
 
-  if (typeClicked.dataset.type === "type") {
+  if (typeClicked.dataset.type === "archetype") {
     const detailsHtml = `
     <div>
     <h4>Greeting:</h4>
     <h4>School:</h4>
     <h4>Study Book:</h4>
     </div>`;
+    const detailsContainer = document.querySelector("#details_container");
+    detailsContainer.innerHTML = detailsHtml;
   }
 });
 
