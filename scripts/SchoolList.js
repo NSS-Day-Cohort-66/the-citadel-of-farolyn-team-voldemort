@@ -20,7 +20,7 @@ export const SchoolList = () => {
   for (const school of list) {
     headerHtml += `
   <ul>
-  <li data-id="${school.id}">${school.name}</li>
+  <li data-id="${school.id}" data-type="school">${school.name}</li>
   </ul>
   `;
   }
