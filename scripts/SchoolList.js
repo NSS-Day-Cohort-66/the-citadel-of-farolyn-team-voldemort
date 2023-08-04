@@ -10,7 +10,8 @@ document.addEventListener("click", (clickEvent) => {
         <h4>Disclaimer:</h4>
         <h4>Currently accepting the following Magician Types:</h4>
       </div>
-    `;
+    `; const detailsContainer = document.querySelector("#details_container");
+    detailsContainer.innerHTML = detailsHtml;
   }
 });
 
@@ -20,7 +21,7 @@ export const SchoolList = () => {
   for (const school of list) {
     headerHtml += `
   <ul>
-  <li data-id="${school.id}">${school.name}</li>
+  <li data-id="${school.id}" data-type="school">${school.name}</li>
   </ul>
   `;
   }
