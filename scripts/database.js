@@ -25,6 +25,14 @@ const database = {
         "Farsight into private dwellings is forbidden, and publication of prognosticated information is subject to statutes of divinatory libel.",
     },
     {
+      id: 4,
+      name: "Enchantment",
+      description:
+        "This school is a prestigious magic school where students master the art of spellbinding and infusing objects with magical properties to create wondrous and captivating effects.",
+      disclaimer: 
+        "Attempts to tamper with the natural balance of the elements are not allowed, as it can lead to environmental catastrophes and endanger lives.",
+    },
+    {
       id: 5,
       name: "Evocation",
       description:
