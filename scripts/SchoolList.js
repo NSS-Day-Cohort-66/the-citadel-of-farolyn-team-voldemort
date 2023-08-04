@@ -10,7 +10,8 @@ document.addEventListener("click", (clickEvent) => {
         <h4>Disclaimer:</h4>
         <h4>Currently accepting the following Magician Types:</h4>
       </div>
-    `;
+    `; const detailsContainer = document.querySelector("#details_container");
+    detailsContainer.innerHTML = detailsHtml;
   }
 });
 
