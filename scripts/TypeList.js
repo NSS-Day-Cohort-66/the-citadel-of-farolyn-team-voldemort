@@ -1,4 +1,4 @@
-import { getArchetypes } from "./database.js";
+import { getArchetypes, getSchools } from "./database.js";
 
 document.addEventListener("click", (clickEvent) => {
   const typeClicked = clickEvent.target;
