@@ -2,16 +2,24 @@ import { getArchetypes, getSchools } from "./database.js";
 
 document.addEventListener("click", (clickEvent) => {
   const schoolClicked = clickEvent.target;
-
+  const schoolId = schoolClicked.dataset.id;
   if (schoolClicked.dataset.type === "school") {
-    const detailsHtml = `
+    let htmlString = ``;
+    const archetype = getArchetypes();
+    for (const archetypes of archetype) {
+      if (parseInt(schoolId) === archetypes.schoolId) {
+        htmlString += ` ${archetypes.name}, `;
+      }
+
+      const detailsHtml = `
       <div>
         <h4>Description:</h4>
         <h4>Disclaimer:</h4>
-        <h4>Currently accepting the following Magician Types:</h4>
-      </div>
-    `; const detailsContainer = document.querySelector("#details_container");
-    detailsContainer.innerHTML = detailsHtml;
+        <h4>Currently accepting the following Magician Types:${htmlString.slice(0,-2)}</h4>
+      </div> `;
+      const detailsContainer = document.querySelector("#details_container");
+      detailsContainer.innerHTML = detailsHtml;
+    }
   }
 });
 
@@ -28,10 +36,3 @@ export const SchoolList = () => {
   headerHtml += `</div>`;
   return headerHtml;
 };
-
-// const schoolId = parseInt(schoolClicked.dataset.id)
-// const archetype = getArchetypes()
-// for (const archetypes of archetype) {
-//   if ( schoolId === archetypes.schoolId)
-//   ${archetypes.name}
-// }
