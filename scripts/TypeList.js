@@ -1,13 +1,21 @@
 import { getArchetypes, getSchools } from "./database.js";
 
+const schools = getSchools();
+
 document.addEventListener("click", (clickEvent) => {
   const typeClicked = clickEvent.target;
 
   if (typeClicked.dataset.type === "archetype") {
+    let archetypesSchool = "";
+    for (const school of schools){
+      if (parseInt(typeClicked.dataset.schoolid) === school.id){
+        archetypesSchool = school.name
+      }
+    }
     const detailsHtml = `
     <div>
     <h4>Greeting: ${typeClicked.dataset.greeting}</h4>
-    <h4>School:</h4>
+    <h4>School: ${archetypesSchool}</h4>
     <h4>Study Book:</h4>
     </div>`;
     const detailsContainer = document.querySelector("#details_container");
