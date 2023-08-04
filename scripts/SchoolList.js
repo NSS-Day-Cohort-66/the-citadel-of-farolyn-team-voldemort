@@ -1,4 +1,4 @@
-import { getSchools } from "./database.js";
+import { getArchetypes, getSchools } from "./database.js";
 
 document.addEventListener("click", (clickEvent) => {
   const schoolClicked = clickEvent.target;
@@ -27,3 +27,10 @@ export const SchoolList = () => {
   headerHtml += `</div>`;
   return headerHtml;
 };
+
+// const schoolId = parseInt(schoolClicked.dataset.id)
+// const archetype = getArchetypes()
+// for (const archetypes of archetype) {
+//   if ( schoolId === archetypes.schoolId)
+//   ${archetypes.name}
+// }
